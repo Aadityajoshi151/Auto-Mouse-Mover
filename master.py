@@ -14,7 +14,7 @@ print("Press Ctrl+C To Stop Auto Mouse Mover")
 def moveMouseCursor():
     autopy.mouse.smooth_move(random.randint(0,width), random.randint(0,height))
 
-schedule.every(2).seconds.do(moveMouseCursor)
+schedule.every(2).minutes.do(moveMouseCursor)
 
 while(True):
     schedule.run_pending()
