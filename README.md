@@ -19,6 +19,6 @@ The intention behind creating this script is **NOT** to keep this running and sl
 
 ## TODOs and Improvements
 - Custom user input
-- Adding a counter (Cursor moved x times) **?**
-- Displaying move coordinates (Cursor moved to x,y) **?**
+- Adding a counter (Cursor moved x times) **REQUIRED?**
+- Displaying move coordinates (Cursor moved to x,y) **REQUIRED?**
 - Tkinter GUI for the same script
