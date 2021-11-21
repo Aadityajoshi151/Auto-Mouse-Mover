@@ -13,7 +13,9 @@ The intention behind creating this script is **NOT** to keep this running and sl
 
 **Step 2)** Open a command prompt in the project directory. Enter the command: `pip install -r requirements.txt`
 
-**Step 3)** Execute the command `python master.py` (Windows) or `python3 master.py` (Linux).
+**Step3)** Use `cd src` to move in the src folder.
+
+**Step 4)** Execute the command `python master.py` (Windows) or `python3 master.py` (Linux).
 
 **NOTE:** Currently the cursor moves in every 2 minutes. I will be adding the functionality where users can give custom input.
 
