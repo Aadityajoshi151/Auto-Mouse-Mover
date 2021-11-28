@@ -3,6 +3,9 @@ import autopy
 import random
 import schedule
 import time
+import argparse
+
+parser = argparse.ArgumentParser(description= "Small and easy python script to move the mouse cursor and stop the system from locking. Made for individuals working in the IT field who use the laptop provided by their employer and have no control over screen lock time.")
 
 monitors_list = get_monitors()
 width = getattr(monitors_list[0],'width') 
@@ -16,6 +19,7 @@ print("Press Ctrl+C To Stop")
 
 schedule.every(2).minutes.do(moveMouseCursor)
 
-while(True):
-    schedule.run_pending()
-    time.sleep(1)
+if __name__ == "__main__":
+    while(True):
+        schedule.run_pending()
+        time.sleep(1)
