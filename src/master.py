@@ -6,12 +6,12 @@ import time
 import argparse
 
 parser = argparse.ArgumentParser(description= "Small and easy python script to move the mouse cursor and stop the system from locking. Made for individuals working in the IT field who use the laptop provided by their employer and have no control over screen lock time.")
-parser.add_argument("-n", type=int, required=True, help="Number of Hours/minutes/seconds")
+parser.add_argument("-n", type=int, metavar="", required=True, help="Number of seconds/minutes/hours")
 
 group = parser.add_mutually_exclusive_group(required=True)
-group.add_argument('-s',action='store_const', dest='type', const='s')
-group.add_argument('-m',action='store_const', dest='type', const='m')
-group.add_argument('-H',action='store_const', dest='type', const='H')
+group.add_argument('-s',action='store_const', metavar="", dest='type', const='s',help="Moves the cursor in specified seconds")
+group.add_argument('-m',action='store_const', metavar="",dest='type', const='m',help="Moves the cursor in specified minutes")
+group.add_argument('-H',action='store_const', metavar="",dest='type', const='H',help="Moves the cursor in specified hours")
 
 args = parser.parse_args()
 
