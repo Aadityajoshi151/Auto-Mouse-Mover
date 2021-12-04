@@ -1,38 +1,20 @@
-from screeninfo import get_monitors
-import autopy
-import random
-import schedule
-import time
-import argparse
+from tkinter import *
+from tkinter import ttk
 
-parser = argparse.ArgumentParser(description= "Small and easy python script to move the mouse cursor and stop the system from locking. Made for individuals working in the IT field who use the laptop provided by their employer and have no control over screen lock time.")
-parser.add_argument("-n", type=int, metavar="", required=True, help="Number of seconds/minutes/hours")
+class AutoMouseMoverGUI:
+#user defined functions will go here
+    def __init__(self,app):
+        #User defined elements will go here
+        self.butt = ttk.Button(app,text="Test")
+        self.butt.pack()
 
-group = parser.add_mutually_exclusive_group(required=True)
-group.add_argument('-s',action='store_const', metavar="", dest='type', const='s',help="Moves the cursor in specified seconds")
-group.add_argument('-m',action='store_const', metavar="",dest='type', const='m',help="Moves the cursor in specified minutes")
-group.add_argument('-H',action='store_const', metavar="",dest='type', const='H',help="Moves the cursor in specified hours")
-
-args = parser.parse_args()
-
-monitors_list = get_monitors()
-width = getattr(monitors_list[0],'width') 
-height = getattr(monitors_list[0],'height')
-
-def moveMouseCursor():
-    autopy.mouse.smooth_move(random.randint(0,width), random.randint(0,height))
-
-if args.type == 's':
-    schedule.every(args.n).seconds.do(moveMouseCursor)
-elif args.type == "m":
-    schedule.every(args.n).minutes.do(moveMouseCursor)
-else:
-    schedule.every(args.n).hours.do(moveMouseCursor)
-
-print("Auto Mouse Mover Running")
-print("Press Ctrl+C To Stop")
+def main():
+    root = Tk()
+    root.title("Auto Mouse Mover")
+    root.geometry("200x200")
+    root.resizable("False","False")
+    obj = AutoMouseMoverGUI(root)
+    root.mainloop()
 
 if __name__ == "__main__":
-    while(True):
-        schedule.run_pending()
-        time.sleep(1)
+    main()      
