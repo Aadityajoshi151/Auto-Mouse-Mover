@@ -14,12 +14,10 @@ class AutoMouseMoverGUI:
 
         self.number_input = ttk.Entry(self.input_frame, justify=CENTER, width=10)
         self.number_input.grid(row=0,column=0,padx=10,pady=10)
+        self.number_input.insert(0,4)
 
-        self.actionbtn = ttk.Button(self.input_frame,text="Hello World")
+        self.actionbtn = ttk.Button(self.input_frame,text="Hello World", command=lambda: print(self.duration.get()))
         self.actionbtn.grid(row=0,column=1,padx=10,pady=2 ,sticky="E")
-
-        # self.actionbtn = ttk.Button(self.input_frame,text="Hello World")
-        # self.actionbtn.grid(row=1,column=1,padx=10,pady=2 ,sticky="E")
 
         self.second_radiobtn = ttk.Radiobutton(self.input_frame,text="Seconds",variable=self.duration,value="seconds")
         self.second_radiobtn.grid(row=1,column=0,padx=10,pady=2 ,sticky="W")
@@ -29,10 +27,6 @@ class AutoMouseMoverGUI:
 
         self.hours_radiobtn = ttk.Radiobutton(self.input_frame,text="Hours",variable=self.duration,value="hours")
         self.hours_radiobtn.grid(row=3,column=0,padx=10,pady=2 , sticky="W")
-
-        
-
-        print(self.duration.get())
 
 def main():
     root = Tk()
