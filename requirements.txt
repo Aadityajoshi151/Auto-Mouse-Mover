@@ -1,3 +1,0 @@
-screeninfo == 0.7
-autopy == 4.0.0
-schedule == 1.1.0
