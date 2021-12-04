@@ -19,6 +19,10 @@ class AutoMouseMoverGUI:
 
         self.minute_radiobtn = Radiobutton(self.input_frame,text="Minutes",variable=self.duration,value="minutes")
         self.minute_radiobtn.grid(row=2,column=0, sticky="W")
+
+        self.hours_radiobtn = Radiobutton(self.input_frame,text="Hours",variable=self.duration,value="hours")
+        self.hours_radiobtn.grid(row=3,column=0, sticky="W")
+
         print(self.duration.get())
 
 def main():
