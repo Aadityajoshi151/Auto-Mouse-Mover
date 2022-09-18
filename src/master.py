@@ -19,8 +19,12 @@ monitors_list = get_monitors()
 width = getattr(monitors_list[0],'width') 
 height = getattr(monitors_list[0],'height')
 
+
 def moveMouseCursor():
-    autopy.mouse.smooth_move(random.randint(0,width), random.randint(0,height))
+    x_coordinate = random.randint(0,width)
+    y_coordinate = random.randint(0,height)
+    autopy.mouse.smooth_move(x_coordinate, y_coordinate)
+    
 
 if args.type == 's':
     schedule.every(args.n).seconds.do(moveMouseCursor)
@@ -30,9 +34,13 @@ else:
     schedule.every(args.n).hours.do(moveMouseCursor)
 
 print("Auto Mouse Mover Running")
+print(f"Mouse Will Move Every {args.n}{args.type}")
 print("Press Ctrl+C To Stop")
 
 if __name__ == "__main__":
-    while(True):
-        schedule.run_pending()
-        time.sleep(1)
+    try:
+        while(True):
+            schedule.run_pending()
+            time.sleep(1)
+    except:
+        print("Auto Mouse Mover Stopped")
