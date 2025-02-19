@@ -1,3 +1,2 @@
-screeninfo == 0.7
-autopy == 4.0.0
+PyAutoGUI == 0.9.54 
 schedule == 1.1.0

@@ -1,5 +1,4 @@
-from screeninfo import get_monitors
-import autopy
+import pyautogui
 import random
 import schedule
 import time
@@ -15,15 +14,14 @@ group.add_argument('-H',action='store_const', metavar="",dest='type', const='H',
 
 args = parser.parse_args()
 
-monitors_list = get_monitors()
-width = getattr(monitors_list[0],'width') 
-height = getattr(monitors_list[0],'height')
+width = pyautogui.size()[0] 
+height = pyautogui.size()[1]
 
 
 def moveMouseCursor():
     x_coordinate = random.randint(0,width)
     y_coordinate = random.randint(0,height)
-    autopy.mouse.smooth_move(x_coordinate, y_coordinate)
+    pyautogui.moveTo(x_coordinate, y_coordinate)
     
 
 if args.type == 's':
